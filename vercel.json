@@ -1,9 +1,18 @@
 {
-    "version": 2,
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "server.js"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js", // Replace with your entry file
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/server.js" // Adjust based on your app's routing
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production" // Define any environment variables needed
   }
+}
